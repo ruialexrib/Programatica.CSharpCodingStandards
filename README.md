@@ -1,10 +1,10 @@
 # Programatica.CSharpCodingStandards
 C# Coding Standards
 
-# Original credits to
+## Original credits to
 http://jesseliberty.com/2020/01/29/c-coding-standards/
 
-## Use PascalCasing for class names and method names
+### Use PascalCasing for class names and method names
 ```csharp
 public class ClientActivity 
 { 
@@ -21,7 +21,7 @@ public class ClientActivity
 ```
 Why: consistent with the Microsoft’s .NET Framework and easy to read.
 
-## Use camelCasing for method arguments and local variables
+### Use camelCasing for method arguments and local variables
 ```csharp
 public class UserLog 
 { 
@@ -35,7 +35,7 @@ public class UserLog
 ```
 Why: consistent with the Microsoft’s .NET Framework and easy to read.
 
-## Do not use Hungarian notation or any other type identification in identifiers (except interfaces)
+### Do not use Hungarian notation or any other type identification in identifiers (except interfaces)
 ```csharp
 // Correct 
 int counter; 
@@ -47,7 +47,7 @@ string strName;
 ```
 Why: The Visual Studio IDE makes determining types very easy (via tooltips). In general you want to avoid type indicators in any identifier. Exception: begin interface names with a capital I followed by Pascal case. Example IFoo.
 
-## Do not use SCREAMING CAPS for constants or read-only variables
+### Do not use SCREAMING CAPS for constants or read-only variables
 ```csharp
 // Correct 
 public static const string ShippingType = "DropShip"; 
@@ -57,7 +57,7 @@ public static const string SHIPPINGTYPE = "DropShip";
 ```
 Why: consistent with the Microsoft’s .NET Framework. Caps grab too much attention.
 
-## Avoid using Abbreviations. Exceptions: abbreviations commonly used as names, such as Id, Xml, Ftp, Uri
+### Avoid using Abbreviations. Exceptions: abbreviations commonly used as names, such as Id, Xml, Ftp, Uri
 ```csharp
 // Correct 
 UserGroup userGroup; 
@@ -75,7 +75,7 @@ UriPart uriPart;
 ```
 Why: consistent with the Microsoft’s .NET Framework and prevents inconsistent abbreviations.
 
-## Use PascalCasing for abbreviations 3 characters or more (2 chars are both uppercase)
+### Use PascalCasing for abbreviations 3 characters or more (2 chars are both uppercase)
 ```csharp
 HtmlHelper htmlHelper; 
 FtpTransfer ftpTransfer; 
@@ -85,7 +85,7 @@ The type here is Pascal, but the field is camelNotation.
 ```
 Why: consistent with the Microsoft’s .NET Framework. Caps would grab visually too much attention.
 
-## Do not use Underscores in identifiers. Prefix private member variables with an underscore
+### Do not use Underscores in identifiers. Prefix private member variables with an underscore
 ```csharp
 // Correct 
 public DateTime clientAppointment; 
@@ -100,7 +100,7 @@ private DateTime _registrationDate;
 ```
 Why: consistent with the Microsoft’s .NET Framework and makes code more natural to read. Also avoids underline stress (inability to see underline). Note, using an underscore for member names is still controversial.
 
-## Use predefined type names instead of system type names like Int16, Single, UInt64, etc.
+### Use predefined type names instead of system type names like Int16, Single, UInt64, etc.
 ```csharp
 // Correct 
 string firstName; 
@@ -114,7 +114,7 @@ Boolean isSaved;
 ```
 Why: consistent with the Microsoft’s .NET Framework and makes code more natural to read.
 
-## Use implicit type var for local variable declarations.
+### Use implicit type var for local variable declarations.
 ```csharp
 var stream = File.Create(path); 
 var customers = new Dictionary(); 
@@ -124,7 +124,7 @@ var isCompleted = true;
 ```
 Why: removes clutter, particularly with complex generic types. Type is easily detected with Visual Studio tooltips. Facilitates programming in that you don’t necessarily need to know the type (e.g., of method calls)
 
-## prefix interfaces with the letter I. Interface names are noun (phrases) or adjectives
+### prefix interfaces with the letter I. Interface names are noun (phrases) or adjectives
 ```csharp
 public interface IShape 
 { 
@@ -143,7 +143,7 @@ public interface IGroupable
 ```
 Why: consistent with the Microsoft’s .NET Framework.
 
-## Name source files according to their main classes
+### Name source files according to their main classes
 ```csharp
 // Located in Task.cs 
 public partial class Task 
@@ -153,7 +153,7 @@ public partial class Task
 ```
 Why: consistent with the Microsoft practices. Files are alphabetically sorted and partial classes remain adjacent.
 
-## organize namespaces with a clearly defined structure. Generally namespaces should reflect the folder hierarchy within a project
+### organize namespaces with a clearly defined structure. Generally namespaces should reflect the folder hierarchy within a project
 ```csharp
 // Examples 
 namespace foo.CloudServices.OccupantMobileApp
@@ -164,7 +164,7 @@ namespace foo.CloudServices.Core
 ```
 Why: consistent with the Microsoft’s .NET Framework. Maintains good organization of your code base.
 
-## Vertically align curly braces.
+### Vertically align curly braces.
 ```csharp
 // Correct 
 class Program 
@@ -177,7 +177,7 @@ class Program
 ```
 Why: Microsoft has a different standard, but developers have overwhelmingly preferred vertically aligned brackets.
 
-## Declare all member variables at the top of a class, with static variables at the very top. Exception, keep backing variables with their property
+### Declare all member variables at the top of a class, with static variables at the very top. Exception, keep backing variables with their property
 ```csharp
 // Correct 
 public class Account 
@@ -198,7 +198,7 @@ public class Account
 ```
 Why: generally accepted practice that prevents the need to hunt for variable declarations.
 
-## Use singular names for enums. Exception: bit field enums
+### Use singular names for enums. Exception: bit field enums
 ```csharp
 // Correct 
 public enum Color 
@@ -224,7 +224,7 @@ public enum Dockings
 ```
 Why: consistent with the Microsoft’s .NET Framework and makes the code more natural to read. Plural flags because enum can hold multiple values (using bitwise ‘OR’).
 
-## Do not explicitly specify a type of an enum or values of enums (except bit fields and where the value is required)
+### Do not explicitly specify a type of an enum or values of enums (except bit fields and where the value is required)
 ```csharp
 // Don't 
 public enum Direction : long 
@@ -271,7 +271,7 @@ class MyClass
 ```
 Why: can create confusion when relying on actual types and values. Exception is when enums are used (foolishly) in bitwise operations.
 
-## Do not suffix enum names with Enum
+### Do not suffix enum names with Enum
 ```csharp
 // Don't 
 public enum CoinEnum 
@@ -295,7 +295,7 @@ public enum Coin
 ```
 Why: consistent with the Microsoft’s .NET Framework and consistent with prior rule of no type indicators in identifiers.
 
-## Do name global styles and static resources with their functional purpose instead of (for example) a color name
+### Do name global styles and static resources with their functional purpose instead of (for example) a color name
 ```csharp
 // Don't
     <Application.Resources>
@@ -313,11 +313,11 @@ Why: consistent with the Microsoft’s .NET Framework and consistent with prior 
 ```
 Why: It will be easier to maintain a static resource when you know when to use it and it’s functional purpose. For example, if your company changes the color for errors, then it will be easy to know what to update and you will only have to update it in one place.. It is a clean coding practice and is self documenting.
 
-## If your line of code is greater than 80, chop it to two or more lines (ReSharper can help) except where essential
+### If your line of code is greater than 80, chop it to two or more lines (ReSharper can help) except where essential
 
 Why: Programmers set their fonts differently and we want to avoid horizontal scrolling. A consistent width across the project will make the code easier to read.
 
-## Do prefer Switch statements to multiple nested if statements
+### Do prefer Switch statements to multiple nested if statements
 ```csharp
 // Don't
 if (...)
@@ -343,7 +343,7 @@ case 2:
 ```
 Why – makes the code easier to understand and maintain. Nested if statements are error prone.
 
-## Do always use braces with conditionals, for loops, etc.
+### Do always use braces with conditionals, for loops, etc.
 ```csharp
 // Correct
    if (condition)
@@ -357,7 +357,7 @@ Why – makes the code easier to understand and maintain. Nested if statements a
 ```
 why – without the braces it is too easy to accidentally add a second line thinking it is included in the if, when it isn’t.
 
-## Where possible prefer switch expressions over switch statements . (new in C# 8)
+### Where possible prefer switch expressions over switch statements . (new in C# 8)
 ```csharp
 // wrong
 switch(foo)
@@ -384,14 +384,14 @@ foo switch
 ```
 Why easier to read, easier to understand and maintain, more concise. (Note, only available as of C# 8)
 
-## Do enable nullable references and treat these warnings as errors
+### Do enable nullable references and treat these warnings as errors
 ```csharp
 #nullable enable
 Person? person;  //etc.
 ```
 Why? Significantly cuts down on null reference exceptions.
 
-## Do use null conditional (?.) operator rather than if statements for null
+### Do use null conditional (?.) operator rather than if statements for null
 ```csharp
 // wrong
 if (a != null)
@@ -407,7 +407,7 @@ return a?.b?.c.name;
 ```
 why – Recommended by Microsoft. Easier to read and understand and thus to maintain. More concise.
 
-## Do use null coalescing (??) operator rather than if statements for null
+### Do use null coalescing (??) operator rather than if statements for null
 ```csharp
 // wrong
 if (a != null)
@@ -430,7 +430,7 @@ return a?.b?.c.name ?? string.empty;
 ```
 why – Recommended by Microsoft. Easier to read and understand and thus to maintain. More concise.
 
-## Prefer SetValue & Lambda expressions for properties (inherit from BaseViewModel)
+### Prefer SetValue & Lambda expressions for properties (inherit from BaseViewModel)
 ```csharp
 // wrong
 private string _property;
@@ -456,14 +456,14 @@ public string Property
 ```
 Why: code is more concise, easier to understand and maintain and allows the base view to consolidate the handling of property changed.
 
-## Declare and define commands in one statement in the ViewModel
+### Declare and define commands in one statement in the ViewModel
 ```csharp
 public ICommand MyCommand =>
     new Command( async ( ) => await OnMyCommand( ) )
 ```
 Why: Easier to read and maintain, everything is in one place.
 
-## Do not place all backing variables together — put them with their properties
+### Do not place all backing variables together — put them with their properties
 ```csharp
 // Wrong
 private string _prop1;
@@ -492,11 +492,11 @@ public int Prop3
 ```
 Why: It makes it far easier to debug issues with getters and setters if the backing variable is with the property — and it cuts down on aggravating scrolling back and forth.
 
-## Treat Warnings As Errors
+### Treat Warnings As Errors
 
 Why: It is all too easy to ignore warnings, and they pile up. Especially with the advent of nullable types, those warnings can save you from the infamous null object reference exception. If you can’t get rid of a warning, consider using a pragma, and failing that, add a comment.
 
-## Use “TODO” sparingly, and check the TODO list often
+### Use “TODO” sparingly, and check the TODO list often
 
 Why: It is easy for the TODO list to grow so large that it is meaningless, it also represents code which isn’t complete.
 There should be no TODO tasks or blocks of commented code as part of ANY pull request.
