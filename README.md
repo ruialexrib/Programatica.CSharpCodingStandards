@@ -296,7 +296,7 @@ public enum Coin
 Why: consistent with the Microsoft’s .NET Framework and consistent with prior rule of no type indicators in identifiers.
 
 ### Do name global styles and static resources with their functional purpose instead of (for example) a color name
-```csharp
+```xml
 // Don't
     <Application.Resources>
         <ResourceDictionary>
